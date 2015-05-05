@@ -1,0 +1,49 @@
+# ID				prov_psi	req_psi		minerals	vespin	time	producer			deps*			
+
+# BUILDINGS
+Assimilator			0			0			75			0		30		-
+Cybernetics_Core	0			0			150			0		50		-					Gateway
+Gateway				0			0			150			0		65		-					Nexus
+Nexus				10			0			400			0		100		-
+Photon_Cannon		0			0			150			0		40		-
+Pylon				8			0			100			0		25		-
+Robotics_Facility	0			0			200			100		65		-					Cybernetics_Core Assimilator
+
+# UNITS
+Probe				0			1			50			0		17		Nexus
+Immortal			0			4			250			100		55		Robotics_Facility	Assimilator # see below to understand Assimilator dependency
+Observer			0			1			25			75		40		Robotics_Facility	Assimilator
+Stalker				0			2			125			50		42		Gateway				Cybernetics_Core
+Void_Ray			0			3			250			150		60		-					Assimilator
+Zealot				0			2			100			0		38		Gateway
+
+# BRIEF DESCRIPTION OF THE FILE FORMAT FOLLOWS:
+
+# General white space is used to separate tokens within a line, 
+# you can therefore directly use I/O streams to separate them.
+# Like white space, everything after fence should be ignored (comments).
+#
+# A line is either empty (only white space and comments),
+# or it contains a valid description of a unique unit or building.
+# Your program must report invalid lines, it can fail with an appropriate error message.
+# Some examples follow
+	 	
+# The previous line contains some white space, so it is fine.
+  # This line is a comment with trailing white space, also fine.
+# The following line is empty, which is as fine as any other line in this document.
+
+# The first columns of descriptions are mandatory. A description consists of:
+ # 1:  The name (unique ID) of the unit or building.
+ # 2:  How much Psi (support) it provides. Usually 0 for units.
+ # 3:  How much Psi (support) it requires. Usually 0 for buildings.
+ # 4:  How much minerals are consumed for production.
+ # 5:  How much Vespin gas is consumed for production.
+ # 6:  How many seconds / time steps the production takes.
+ # 7:  A production site: For a Probe, e.g., _one_ Nexus is occupied for 17 seconds / time steps.
+ #     A dash indicates that no site is occupied. 
+ # 8: Optional enumeration of dependencies. Additional to the dependencies in the Techtree, 
+ #     we added artificial dependencies for everything that consumes Vespin gas on Assimilators.
+#
+# Columns 1 to 6 are mandatory, columns 8 and further are optional.
+# Column 7 can be made mandatory, too, but you may allow for an 
+# empty 7th column (no producer, no dependencies).

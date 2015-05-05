@@ -1,0 +1,12 @@
+Assimilator started at time 6 and ands at time 36
+Probe started at time 14 and ands at time 31
+Probe started at time 21 and ands at time 38
+Assimilator started at time 31 and ands at time 61
+Probe started at time 37 and ands at time 54
+Probe started at time 42 and ands at time 59
+Pylon started at time 52 and ands at time 77
+Pylon started at time 62 and ands at time 87
+Pylon started at time 72 and ands at time 97
+Pylon started at time 82 and ands at time 107
+Pylon started at time 92 and ands at time 117
+Pylon started at time 102 and ands at time 127
